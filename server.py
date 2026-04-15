@@ -22,7 +22,7 @@ def emotion_detector_view():
     dominant_emotion = response['dominant_emotion']
 
     if dominant_emotion is None:
-        return "Invalid text! Please try again!"
+        return "Invalid input! Please try again!"
 
     return (
         f"For the given statement, the system response is "
