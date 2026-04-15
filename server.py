@@ -1,10 +1,16 @@
-from flask import Flask, render_template, request 
+''' 
+Tips 
+'''
+from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask('Emotion Detection')
 
 @app.route("/emotionDetector")
-def emotionDetector():
+def emotion_detector_view():
+    ''' 
+    Tips 
+    '''
     text_to_analyze = request.args.get('textToAnalyze')
     response = emotion_detector(text_to_analyze)
 
@@ -26,6 +32,9 @@ def emotionDetector():
 
 @app.route("/")
 def render_index_page():
+    ''' 
+    Tips 
+    '''
     return render_template("index.html")
 
 if __name__ == "__main__":
